@@ -1,0 +1,10 @@
+apply plugin: 'eclipse'
+
+plugins.withType(JavaBasePlugin) {
+		//Crear el archivo .classpath de eclipse con todas las dependencias excepto los archivos .pom
+	  eclipse.classpath.file {
+      whenMerged { classpath ->
+          classpath.entries.removeAll { it.path.endsWith('pom') }
+      }
+  }
+}
