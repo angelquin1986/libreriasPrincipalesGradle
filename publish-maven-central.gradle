@@ -1,10 +1,10 @@
 apply plugin: 'maven'
 
 repositories {
-  // mavenCentral()
-  maven {
-        url "http://fuentes:8081/repository/maven-public/"
-  }
+   mavenCentral()
+  //maven {
+  //      url "http://fuentes:8081/repository/maven-public/"
+  //}
   mavenLocal()
 }
 install {
