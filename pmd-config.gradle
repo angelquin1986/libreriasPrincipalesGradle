@@ -1,0 +1,8 @@
+apply plugin: 'pmd'
+pmd {
+	def remoteRuleSets = file("${System.properties['java.io.tmpdir']}/ruleset.xml")
+	remoteRuleSets.text = new URL('https://raw.githubusercontent.com/angelquin1986/libreriasPrincipalesGradle/master/pmd-ruleset.xml').text
+	ruleSetFiles = files(remoteRuleSets)
+	ignoreFailures = false
+	rulePriority = 5			
+}
